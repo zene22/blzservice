@@ -1,0 +1,20 @@
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+swagger:
+  project:
+    info:
+      title: @project.name@
+      version: @pipeline.number@ #@this.build.number@
+      description: @project.description@
+
+logging:
+  pattern:
+    console: "[@project.artifactId@] %date{YYYY-MM-dd HH:mm:ss} %-5.5level [%-25.25thread] %-60.60logger{30} %msg%n"
+  level:
+    root: warn
+    org.springframework: info
+    info.furbach: debug
+    info.furbach.blz: trace
